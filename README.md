@@ -22,12 +22,12 @@ This project helped me learn:
 
 🛠 Troubleshooting AI tool pipelines
 
-🧠 How It Works
-1️⃣ Chat Trigger
+<h1>🧠 How It Works</h1>h1>
+<h3></h3>1️⃣ Chat Trigger</h3>
 
 The workflow starts when a new message is received.
 
-2️⃣ AI Agent (The Brain 🧠)
+<h3>2️⃣ AI Agent (The Brain 🧠)</h3>
 
 The AI Agent uses OpenAI (gpt-4o-mini) to:
 
@@ -43,7 +43,7 @@ It uses a dynamic system message to always know today’s date:
 
 Today's date is {{DateTime.now().setZone('Asia/Kolkata').toFormat('dd LLL yyyy HH:mm:ss')}}
 
-3️⃣ JSON Expressions
+<h3>3️⃣ JSON Expressions</h3>
 
 Instead of static times, the workflow uses:
 
@@ -53,13 +53,13 @@ Instead of static times, the workflow uses:
 
 This ensures the AI decides the final event timing, not n8n default values.
 
-4️⃣ Google Calendar Tool
+<h3>4️⃣ Google Calendar Tool</h3>
 
 The tool creates the real event in your actual calendar.
 If the time is free → event is added.
 If not → AI can be extended to suggest alternatives.
 
-🛠️ Tech Stack
+<h2>🛠️ Tech Stack</h2>
 Tool	Purpose
 n8n	Workflow automation
 OpenAI (gpt-4o-mini)	Natural language understanding
@@ -80,7 +80,7 @@ AI Agent	Decision-making + tool calling
 
 ❌ No hard-coding of dates or times
 
-🧪 Testing & Debugging
+<h2>🧪 Testing & Debugging</h2>
 
 During development:
 
@@ -100,14 +100,14 @@ Reviewing AI Agent logs carefully
 
 The final workflow now schedules correct events every time. 🎉
 
-📂 Workflow Diagram (Simplified)
+<h2>📂 Workflow Diagram (Simplified)</h2>
 flowchart LR
     A[Chat Trigger] --> B[AI Agent]
     B -->|Parses Time| D[From AI Variables]
     D --> C[Google Calendar Tool]
     C --> E(Event Created)
 
-📁 Files Included
+<h2>📁 Files Included</h2>
 
 My workflow.json — Importable n8n workflow
 
@@ -115,7 +115,7 @@ AI workflow.pdf — Full project explanation
 
 README.md — This file
 
-🧑‍💻 Setup Instructions
+<h2>🧑‍💻 Setup Instructions</h2>
 1. Import Workflow
 
 Upload the provided JSON file into n8n.
@@ -133,15 +133,7 @@ Run the workflow and send messages like:
 schedule a call tomorrow at 4pm
 
 4. Watch Your Calendar Update Automagically ✨
-🎯 Future Improvements
 
-📆 Conflict detection (check existing events)
-
-🔁 Support for recurring meetings
-
-🤝 Multi-person scheduling
-
-🧠 Add memory for user preferences
 
 👩‍🎓 Author
 
