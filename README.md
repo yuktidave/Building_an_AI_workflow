@@ -1,7 +1,7 @@
 ✨ AI Calendar Scheduling Workflow
 Automate your Google Calendar using n8n + OpenAI
 <p align="center"> <img src="https://img.shields.io/badge/n8n-Automation-orange?style=for-the-badge" /> <img src="https://img.shields.io/badge/OpenAI-gpt--4o--mini-blue?style=for-the-badge" /> <img src="https://img.shields.io/badge/Google-Calendar-4285F4?style=for-the-badge&logo=googlecalendar&logoColor=white" /> </p> <p align="center"> <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square" /> <img src="https://img.shields.io/badge/Maintained-Yes-blue?style=flat-square" /> </p>
-🚀 Overview
+<h1>🚀 Overview</h1>
 
 This project is an AI-powered automation workflow built using n8n, OpenAI, and Google Calendar.
 Simply send a natural-language message like:
