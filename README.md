@@ -23,7 +23,7 @@ This project helped me learn:
 5. 🛠 Troubleshooting AI tool pipelines
 
 <h2>🧠 How It Works</h2>
-<h3></h3>1️⃣ Chat Trigger</h3>
+<h3>1️⃣ Chat Trigger</h3>
 
 The workflow starts when a new message is received.
 
