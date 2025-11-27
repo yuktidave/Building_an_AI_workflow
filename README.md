@@ -1,194 +1,153 @@
-AI Calendar Scheduling Workflow (n8n + OpenAI + Google Calendar)
+✨ AI Calendar Scheduling Workflow
+Automate your Google Calendar using n8n + OpenAI
+<p align="center"> <img src="https://img.shields.io/badge/n8n-Automation-orange?style=for-the-badge" /> <img src="https://img.shields.io/badge/OpenAI-gpt--4o--mini-blue?style=for-the-badge" /> <img src="https://img.shields.io/badge/Google-Calendar-4285F4?style=for-the-badge&logo=googlecalendar&logoColor=white" /> </p> <p align="center"> <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square" /> <img src="https://img.shields.io/badge/Maintained-Yes-blue?style=flat-square" /> </p>
+🚀 Overview
 
-A fully automated workflow that uses AI to read natural-language messages and schedule events in Google Calendar — built using n8n, OpenAI, and Google Calendar API.
-
-📌 About This Project
-
-This project demonstrates how to build an AI-powered workflow using n8n, where a user can send a simple chat message like:
+This project is an AI-powered automation workflow built using n8n, OpenAI, and Google Calendar.
+Simply send a natural-language message like:
 
 “Book a meeting tomorrow at 10 AM.”
 
-…and the workflow automatically schedules the correct event in Google Calendar using AI intelligence.
-This project was created to explore AI automation, tool integrations, and workflow engineering.
-AI workflow
+…and the workflow automatically creates a properly-timed event in your Google Calendar.
 
- and the workflow JSON you exported 
+This project helped me learn:
 
-My workflow
+🔗 Workflow automation
 
-.)
+🤖 AI Agents & system messages
 
-🚀 Features
+🧩 JSON expressions
 
-Natural-language message input via n8n chat trigger
+📅 Google Calendar API integrations
 
-OpenAI-powered Chat Model (gpt-4o-mini)
-
-Automatic time extraction (start/end time)
-
-Google Calendar event creation
-
-Real-time timezone awareness (Asia/Kolkata)
-
-Fully no-code setup using n8n
+🛠 Troubleshooting AI tool pipelines
 
 🧠 How It Works
-1. Chat Trigger Starts the Workflow
+1️⃣ Chat Trigger
 
-A user sends any message (“schedule a call for tomorrow at 3 PM”).
-This triggers the workflow. (Page 4 of your PDF shows this clearly.) 
+The workflow starts when a new message is received.
 
-AI workflow
+2️⃣ AI Agent (The Brain 🧠)
 
-2. AI Agent Interprets the Message
+The AI Agent uses OpenAI (gpt-4o-mini) to:
 
-The n8n AI Agent uses:
+Understand your message
 
-A system message
+Extract date & time
 
-OpenAI's Chat Model
+Generate a meeting title
 
-The system message includes the current date and time using:
+Decide whether to call the Calendar tool
 
-{{DateTime.now().setZone('Asia/Kolkata').toFormat('dd LLL yyyy HH:mm:ss')}}
+It uses a dynamic system message to always know today’s date:
 
+Today's date is {{DateTime.now().setZone('Asia/Kolkata').toFormat('dd LLL yyyy HH:mm:ss')}}
 
-(Seen inside your workflow JSON systemMessage field.) 
+3️⃣ JSON Expressions
 
-My workflow
-
-3. AI Extracts Required Fields
-
-The AI parses:
-
-start_time
-
-end_time
-
-summary
-
-These values are passed through:
+Instead of static times, the workflow uses:
 
 ={{ $fromAI('start_time') }}
 ={{ $fromAI('end_time') }}
 
 
+This ensures the AI decides the final event timing, not n8n default values.
 
-AI workflow
+4️⃣ Google Calendar Tool
 
-4. Google Calendar API Creates the Event
-
-The Google Calendar node adds the event to your actual calendar.
-
-
-AI workflow
+The tool creates the real event in your actual calendar.
+If the time is free → event is added.
+If not → AI can be extended to suggest alternatives.
 
 🛠️ Tech Stack
+Tool	Purpose
+n8n	Workflow automation
+OpenAI (gpt-4o-mini)	Natural language understanding
+Google Calendar API	Event creation
+JSON Expressions	Dynamic parameter mapping
+AI Agent	Decision-making + tool calling
+🌟 Features
 
-n8n – AI workflow automation
+✨ AI understands natural-language date/time
 
-OpenAI (gpt-4o-mini) – language understanding
+🧷 Auto-creates events in Google Calendar
 
-Google Calendar API – event creation
+🕒 Accurate timezone handling (Asia/Kolkata)
 
-JSON expressions – dynamic data mapping
+🔍 Debuggable AI agent logs
 
-🧩 Workflow Structure (Simplified)
+⚡ Uses free OpenAI credits from n8n
 
-When Chat Message Received
+❌ No hard-coding of dates or times
 
-AI Agent
+🧪 Testing & Debugging
 
-System message
+During development:
 
-Date handling
+The event was created at wrong times
 
-OpenAI Chat Model
+The Calendar node used current time instead of AI time
 
-Google Calendar Tool (Create Event)
+System message had fixed dates → wrong scheduling
 
+These were fixed by:
 
-My workflow
+Switching to $fromAI() JSON expressions
 
-🧪 Testing & Troubleshooting
+Making the system message dynamic
 
-During testing, you identified issues with:
+Reviewing AI Agent logs carefully
 
-Wrong start/end time values
+The final workflow now schedules correct events every time. 🎉
 
-The tool using “current time” instead of AI-parsed times
+📂 Workflow Diagram (Simplified)
+flowchart LR
+    A[Chat Trigger] --> B[AI Agent]
+    B -->|Parses Time| D[From AI Variables]
+    D --> C[Google Calendar Tool]
+    C --> E(Event Created)
 
-Incorrect dates due to fixed system messages
+📁 Files Included
 
+My workflow.json — Importable n8n workflow
 
-AI workflow
+AI workflow.pdf — Full project explanation
 
+README.md — This file
 
-These issues were fixed by:
+🧑‍💻 Setup Instructions
+1. Import Workflow
 
-Switching to {{ $fromAI(...) }} JSON expressions
+Upload the provided JSON file into n8n.
 
-Making the system message dynamic, not fixed
+2. Connect Credentials
 
-Ensuring proper timezone handling
+Google Calendar
 
-🎉 Final Result
+OpenAI (n8n free credits supported)
 
-The final workflow successfully:
+3. Start Workflow
 
-Interprets any natural-language date
+Run the workflow and send messages like:
 
-Creates the correct event in Google Calendar
+schedule a call tomorrow at 4pm
 
-Adapts to daily date changes automatically
+4. Watch Your Calendar Update Automagically ✨
+🎯 Future Improvements
 
+📆 Conflict detection (check existing events)
 
-AI workflow
+🔁 Support for recurring meetings
 
-📂 Project Files
+🤝 Multi-person scheduling
 
-AI workflow PDF report – detailed explanation of the project (design, testing, challenges)
+🧠 Add memory for user preferences
 
-
-AI workflow
-
-Workflow JSON – importable n8n workflow
-
-
-My workflow
-
-📝 How to Use
-
-Import the provided .json workflow into n8n.
-
-Connect:
-
-Google Calendar credentials
-
-OpenAI API (n8n free credits are supported)
-
-Set your timezone (already configured as Asia/Kolkata).
-
-Start the workflow.
-
-Send a message like:
-
-Book a meeting for tomorrow at 4 PM.
-
-
-The event will appear in your Google Calendar.
-
-⭐ Future Improvements
-
-Add conflict detection (check existing calendar availability)
-
-Support recurring events
-
-Add memory for ongoing scheduling preferences
-
-Multi-calendar support
-
-👩‍💻 Author
+👩‍🎓 Author
 
 Yukti Dave
-A NextWork student learning automation and AI workflows.
+AI automation enthusiast, learning to build smart workflows using n8n & OpenAI.
+
+⭐ Support
+
+If you like this project, please ⭐ star the repo — it motivates me to build more AI workflows!
