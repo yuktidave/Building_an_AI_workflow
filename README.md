@@ -12,15 +12,15 @@ Simply send a natural-language message like:
 
 This project helped me learn:
 
-1. 🔗 Workflow automation
+- 🔗 Workflow automation
 
-2. 🤖 AI Agents & system messages
+- 🤖 AI Agents & system messages
 
-3. 🧩 JSON expressions
+- 🧩 JSON expressions
 
-4. 📅 Google Calendar API integrations
+- 📅 Google Calendar API integrations
 
-5. 🛠 Troubleshooting AI tool pipelines
+- 🛠 Troubleshooting AI tool pipelines
 
 <h2>🧠 How It Works</h2>
 <h3>1️⃣ Chat Trigger</h3>
@@ -31,17 +31,17 @@ The workflow starts when a new message is received.
 
 The AI Agent uses OpenAI (gpt-4o-mini) to:
 
-Understand your message
+- Understand your message
 
-Extract date & time
+- Extract date & time
 
-Generate a meeting title
+- Generate a meeting title
 
-Decide whether to call the Calendar tool
+- Decide whether to call the Calendar tool
 
-It uses a dynamic system message to always know today’s date:
+- It uses a dynamic system message to always know today’s date:
 
-Today's date is {{DateTime.now().setZone('Asia/Kolkata').toFormat('dd LLL yyyy HH:mm:ss')}}
+- Today's date is {{DateTime.now().setZone('Asia/Kolkata').toFormat('dd LLL yyyy HH:mm:ss')}}
 
 <h3>3️⃣ JSON Expressions</h3>
 
@@ -84,19 +84,19 @@ AI Agent	Decision-making + tool calling
 
 During development:
 
-The event was created at wrong times
+- The event was created at wrong times
 
-The Calendar node used current time instead of AI time
+- The Calendar node used current time instead of AI time
 
-System message had fixed dates → wrong scheduling
+- System message had fixed dates → wrong scheduling
 
 These were fixed by:
 
-Switching to $fromAI() JSON expressions
+- Switching to $fromAI() JSON expressions
 
-Making the system message dynamic
+- Making the system message dynamic
 
-Reviewing AI Agent logs carefully
+- Reviewing AI Agent logs carefully
 
 The final workflow now schedules correct events every time. 🎉
 
@@ -109,9 +109,9 @@ flowchart LR
 
 <h2>📁 Files Included</h2>
 
-My workflow.json — Importable n8n workflow
+- My workflow.json — Importable n8n workflow
 
-AI workflow.pdf — Full project explanation
+- AI workflow.pdf — Full project explanation
 
 README.md — This file
 
