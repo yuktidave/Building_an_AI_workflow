@@ -1,7 +1,7 @@
 ✨ AI Calendar Scheduling Workflow
 Automate your Google Calendar using n8n + OpenAI
 <p align="center"> <img src="https://img.shields.io/badge/n8n-Automation-orange?style=for-the-badge" /> <img src="https://img.shields.io/badge/OpenAI-gpt--4o--mini-blue?style=for-the-badge" /> <img src="https://img.shields.io/badge/Google-Calendar-4285F4?style=for-the-badge&logo=googlecalendar&logoColor=white" /> </p> <p align="center"> <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square" /> <img src="https://img.shields.io/badge/Maintained-Yes-blue?style=flat-square" /> </p>
-<h1>🚀 Overview</h1>
+<h1></h1>🚀 Overview</h1>
 
 This project is an AI-powered automation workflow built using n8n, OpenAI, and Google Calendar.
 Simply send a natural-language message like:
@@ -12,17 +12,17 @@ Simply send a natural-language message like:
 
 This project helped me learn:
 
-🔗 Workflow automation
+1. 🔗 Workflow automation
 
-🤖 AI Agents & system messages
+2. 🤖 AI Agents & system messages
 
-🧩 JSON expressions
+3. 🧩 JSON expressions
 
-📅 Google Calendar API integrations
+4. 📅 Google Calendar API integrations
 
-🛠 Troubleshooting AI tool pipelines
+5. 🛠 Troubleshooting AI tool pipelines
 
-<h1>🧠 How It Works</h1>h1>
+<h2>🧠 How It Works</h2>
 <h3></h3>1️⃣ Chat Trigger</h3>
 
 The workflow starts when a new message is received.
